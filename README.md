@@ -40,13 +40,13 @@ const options = {
       wireframeMesh: true,
     },
   };
- dxfViewerRef.current = new DxfViewer(
+ const dxfViewer = new DxfViewer(
       canvasContainerRef.current,
       options,
     );
 
 // Load and render DXF file
- await dxfViewerRef.current.Load({
+ await dxfViewer.Load({
         url: fileUrl,
         fonts,
         progressCbk: handleProgress,
